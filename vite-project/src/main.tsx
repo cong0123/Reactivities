@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './app/layout/style.css'
 import 'semantic-ui-css/semantic.min.css'
 import 'react-toastify/dist/ReactToastify.min.css'
-
+import "react-datepicker/dist/react-datepicker.css";
 import { StoreContext, store } from './app/store/store'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './app/router/Routers'
