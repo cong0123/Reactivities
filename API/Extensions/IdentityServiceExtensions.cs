@@ -35,15 +35,14 @@ namespace API.Extensions
                     };
                 });
             services.AddAuthorization(opt =>
-       {
-           opt.AddPolicy("IsActivityHost", policy =>
-           {
-               policy.Requirements.Add(new IsHostRequirement());
-           });
-       });
+        {
+            opt.AddPolicy("IsActivityHost", policy =>
+            {
+                policy.Requirements.Add(new IsHostRequirement());
+            });
+        });
 
             services.AddTransient<IAuthorizationHandler, IsHostRequirementHandler>();
-
             services.AddScoped<TokenService>();
 
             return services;

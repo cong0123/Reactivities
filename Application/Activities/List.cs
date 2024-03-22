@@ -25,11 +25,12 @@ namespace Application.Activities
                 _mapper = mapper;
             }
 
-            public async Task<Result<List<ActivityDto>>> Handle(Query request, CancellationToken token)
+            public async Task<Result<List<ActivityDto>>> Handle(Query request, CancellationToken cancellationToken)
             {
                 var activities = await _context.Activities
-                  .ProjectTo<ActivityDto>(_mapper.ConfigurationProvider)
-                .ToListAsync(token);
+                    .ProjectTo<ActivityDto>(_mapper.ConfigurationProvider)
+                    .ToListAsync(cancellationToken);
+
                 return Result<List<ActivityDto>>.Success(activities);
             }
         }
